@@ -23,7 +23,7 @@ public class Board extends Timestamped {
     private String contents;
 
     @Column(nullable = false)
-    private int password;
+    private String password;
 
 
     //

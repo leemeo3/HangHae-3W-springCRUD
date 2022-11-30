@@ -35,20 +35,20 @@ public class BoardController {
     }
 
     // 선택 조회
-    @GetMapping("/api/boards/{id}")
-    public BoardResponseDto getBoard(@RequestParam long id) {
+    @GetMapping("/api/boards{id}")
+    public BoardResponseDto getBoard(@PathVariable Long id) {
         return boardService.getBoard(id);
     }
 
     // 수정
     @PutMapping("/api/boards/{id}")
-    public BoardResponseDto updateBoard(@RequestParam long id, @RequestBody BoardRequestDto requestDto) {
+    public BoardResponseDto updateBoard(@PathVariable long id, @RequestBody BoardRequestDto requestDto) {
         return boardService.updateBoard(id, requestDto);
     }
 
     // 삭제
     @DeleteMapping("/api/boards/{id}")
-    public BoardResponseDto deleteBoard(@RequestParam long id) {
-        return boardService.deleteBoard(id);
+    public BoardResponseDto deleteBoard(@PathVariable long id, @RequestBody BoardRequestDto requestDto) {
+        return boardService.deleteBoard(id, requestDto);
     }
 }

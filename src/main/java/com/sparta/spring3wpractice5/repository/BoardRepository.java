@@ -9,5 +9,7 @@ import java.util.Optional;
 public interface BoardRepository extends JpaRepository<Board, Long> {
     List<Board> findAllByOrderByModifiedAtDesc(); // 내림차순
 
-    Optional<Board> findByIdAndPassword(Long id, int password); // id와 password 일치여부 확인
+    Optional<Board> findByIdAndPassword(Long id, String password); // id와 password 일치여부 확인
+
+    Optional<Board> findBoardBy(); // id와 password 일치여부 확인
 }

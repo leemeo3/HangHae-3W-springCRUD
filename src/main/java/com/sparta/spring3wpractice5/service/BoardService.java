@@ -48,11 +48,16 @@ public class BoardService {
     }
 
     // 삭제 로직
-    public BoardResponseDto deleteBoard(Long id) {
-        Board board = boardRepository.findById(id).orElseThrow(     // 일치하는 id 값 확인
+    public BoardResponseDto deleteBoard(Long id, BoardRequestDto requestDto) {
+        Board board = boardRepository.findByIdAndPassword(id, requestDto.getPassword()).orElseThrow(     // 일치하는 id 값 확인
                 () -> new RuntimeException("일치하는 게시글이 없습니다")
         );
-        boardRepository.delete(board);                              // delete
+        if (board.getPassword().equals(requestDto.getPassword())) {
+            boardRepository.delete(board);
+        }else {
+            new RuntimeException("일치하는 게시글이 없습니다");
+        }
+//        boardRepository.delete(board);                              // delete
         return new BoardResponseDto(board);                         // entity -> Dto 반환
     }
 }

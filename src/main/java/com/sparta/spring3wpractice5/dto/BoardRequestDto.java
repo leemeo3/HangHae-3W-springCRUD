@@ -11,5 +11,5 @@ public class BoardRequestDto {
     private String title;
     private String name;
     private String contents;
-    private int password;
+    private String password;
 }

@@ -13,7 +13,7 @@ public class BoardCreateResponseDto {
     private String title;
     private String name;
     private String contents;
-    private int password;
+    private String password;
     private LocalDateTime createdAt;
     private LocalDateTime modifiedAt;
 

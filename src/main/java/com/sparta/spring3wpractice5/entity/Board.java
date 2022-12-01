@@ -26,7 +26,7 @@ public class Board extends Timestamped {
     private String password;
 
 
-    //
+    // dto -> entity
     public Board(BoardRequestDto requestDto) {
         this.title = requestDto.getTitle();
         this.name = requestDto.getName();
@@ -34,6 +34,7 @@ public class Board extends Timestamped {
         this.password = requestDto.getPassword();
     }
 
+    // dto -> entity
     public void update(BoardRequestDto requestDto) {
         this.title = requestDto.getTitle();
         this.name = requestDto.getName();

@@ -17,6 +17,7 @@ public class BoardResponseDto {
     private LocalDateTime createdAt;
     private LocalDateTime modifiedAt;
 
+    // entity -> Dto
     public BoardResponseDto(Board board) {
         this.id = board.getId();
         this.title = board.getTitle();

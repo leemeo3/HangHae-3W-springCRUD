@@ -7,9 +7,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface BoardRepository extends JpaRepository<Board, Long> {
-    List<Board> findAllByOrderByModifiedAtDesc(); // 내림차순
+    List<Board> findAllByOrderByCreatedAtDesc(); // 생성시간 기준 내림차순
 
     Optional<Board> findByIdAndPassword(Long id, String password); // id와 password 일치여부 확인
 
-    Optional<Board> findBoardBy(); // id와 password 일치여부 확인
 }

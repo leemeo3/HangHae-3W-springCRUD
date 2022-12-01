@@ -1,8 +1,8 @@
 package com.sparta.spring3wpractice5.controller;
 
-import com.sparta.spring3wpractice5.dto.BoardCreateResponseDto;
 import com.sparta.spring3wpractice5.dto.BoardRequestDto;
 import com.sparta.spring3wpractice5.dto.BoardResponseDto;
+import com.sparta.spring3wpractice5.dto.ResponseDto;
 import com.sparta.spring3wpractice5.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -23,19 +23,19 @@ public class BoardController {
     }
 
     // 생성
-    @PostMapping("/api/boards")
-    public BoardCreateResponseDto createBoard(@RequestBody BoardRequestDto requestDto) {
+    @PostMapping("api/boards")
+    public BoardResponseDto createBoard(@RequestBody BoardRequestDto requestDto) {
         return boardService.createBoard(requestDto);
     }
 
     // 조회
-    @GetMapping("/api/boards")
+    @GetMapping("api/boards")
     public List<BoardResponseDto> getBoard() {
         return boardService.getBoard();
     }
 
     // 선택 조회
-    @GetMapping("/api/boards{id}")
+    @GetMapping("api/boards/{id}")
     public BoardResponseDto getBoard(@PathVariable Long id) {
         return boardService.getBoard(id);
     }
@@ -48,7 +48,7 @@ public class BoardController {
 
     // 삭제
     @DeleteMapping("/api/boards/{id}")
-    public BoardResponseDto deleteBoard(@PathVariable long id, @RequestBody BoardRequestDto requestDto) {
+    public ResponseDto deleteBoard(@PathVariable long id, @RequestBody BoardRequestDto requestDto) {
         return boardService.deleteBoard(id, requestDto);
     }
 }

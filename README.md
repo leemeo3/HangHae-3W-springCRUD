@@ -20,7 +20,7 @@
 ![스크린샷 2022-12-01 오후 11 18 52](https://user-images.githubusercontent.com/117142323/205076242-9b06cf26-d8d5-43fc-86b1-7f672e8be321.png)
 ## 3. 기능 구성도 
 ![스크린샷 2022-12-01 오후 11 16 57](https://user-images.githubusercontent.com/117142323/205075830-3bae6045-7b9c-4585-88cf-21dc741ca8e8.png)
-## 4. 사용한 기숢 및 툴
+## 4. 사용한 기술 및 툴
 * Java
 * SpringBoot
 * JPA

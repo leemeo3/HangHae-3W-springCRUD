@@ -26,4 +26,3 @@
 * JPA
 * H2-database
 * Postman
- 
